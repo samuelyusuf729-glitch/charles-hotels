@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Luxe - Hotel & Suites</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-hotel"></i> Charles Luxe
+        </div>
+        <nav class="nav-links">
+            <a href="#rooms">Rooms</a>
+            <a href="#preorder">Pre-Order</a>
+            <a href="#my-bookings">My Bookings</a>
+            <a href="#contact" class="btn-contact">Contact Us</a>
+        </nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Unrivaled Elegance</h1>
+            <p>Book your luxurious stay, pre-order exclusive dining and amenities, and enjoy 24/7 concierge service at Charles Luxe.</p>
+            <a href="#rooms" class="cta-btn">Explore Rooms</a>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="container">
+        <div class="section-header">
+            <h2>Our Luxurious Accommodations</h2>
+            <p>Select a room that fits your lifestyle and book your dream getaway today.</p>
+        </div>
+        <div class="rooms-grid" id="roomsGrid">
+            <!-- Dynamically populated via app.js -->
+        </div>
+    </section>
+
+    <!-- Pre-Order Section -->
+    <section id="preorder" class="container bg-light">
+        <div class="section-header">
+            <h2>Pre-Order Amenities & Dining</h2>
+            <p>Enhance your stay by pre-ordering gourmet meals, spa treatments, or champagne right to your room.</p>
+        </div>
+        <div class="preorder-container">
+            <div class="menu-grid" id="menuGrid">
+                <!-- Dynamically populated via app.js -->
+            </div>
+            <div class="order-summary-card">
+                <h3>Your Pre-Order Cart</h3>
+                <div id="cartItems" class="cart-items">
+                    <p class="empty-cart">No items added yet.</p>
+                </div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotalPrice">$0.00</span>
+                </div>
+                <button id="submitOrderBtn" class="btn-primary" disabled>Confirm Pre-Order</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Bookings Section -->
+    <section id="my-bookings" class="container">
+        <div class="section-header">
+            <h2>Your Stays & Orders</h2>
+            <p>Manage your upcoming reservations and active pre-orders.</p>
+        </div>
+        <div class="bookings-wrapper" id="bookingsWrapper">
+            <p class="empty-msg">No active bookings found. Book a room above to get started!</p>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h3 id="modalRoomTitle">Book Room</h3>
+            <form id="bookingForm">
+                <input type="hidden" id="modalRoomId">
+                <div class="form-group">
+                    <label for="guestName">Full Name</label>
+                    <input type="text" id="guestName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="guestEmail">Email Address</label>
+                    <input type="email" id="guestEmail" required placeholder="john@example.com">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkInDate">Check-In Date</label>
+                        <input type="date" id="checkInDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOutDate">Check-Out Date</label>
+                        <input type="date" id="checkOutDate" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary full-width">Complete Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Customer Service Chat Widget -->
+    <div class="chat-widget">
+        <div id="chatToggleBtn" class="chat-toggle-btn">
+            <i class="fa-solid fa-comments"></i>
+            <span class="badge">1</span>
+        </div>
+        <div id="chatWindow" class="chat-window hidden">
+            <div class="chat-header">
+                <div>
+                    <h4>Charles Luxe Concierge</h4>
+                    <span class="status-dot"></span> Online 24/7
+                </div>
+                <button id="chatCloseBtn">×</button>
+            </div>
+            <div id="chatBody" class="chat-body">
+                <div class="chat-message bot">
+                    Hello! Welcome to Charles Luxe. How may I assist you with your booking or stay today?
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button id="chatSendBtn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Charles Luxe Hotel</h3>
+                <p>Redefining hospitality with world-class comfort, personalized dining, and premium guest care.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#preorder">Dining & Spa</a></li>
+                    <li><a href="#my-bookings">Manage Bookings</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 777 Luxury Avenue, Beverly Hills, CA</p>
+                <p><i class="fa-solid fa-phone"></i> +1 (800) 555-LUXE</p>
+                <p><i class="fa-solid fa-envelope"></i> concierge@charlesluxe.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Charles Luxe Hotel & Suites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
